@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jan 23 02:02:38 2025
-
-@author: JSALVADORRC
 """
 
 import torch
@@ -125,7 +123,7 @@ class MultiTaskUNET(torch.nn.Module):
         self.dec2S = Decoder_UpSampling(flts[2], flts[1])
         self.dec1S = Decoder_UpSampling(flts[1], flts[0])
         
-        # última capa conv que nos da la máscara de segmentaC_inón
+        # última capa conv que nos da la máscara de segmentacinón
         self.out1 = torch.nn.Conv2d(flts[0], num_classes_seg, 1, padding=0)
         # última capa conv que nos da la máscara del esqueleto
         self.out2 = torch.nn.Conv2d(flts[0], num_classes_skeleton, 1, padding=0)
