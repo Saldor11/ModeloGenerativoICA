@@ -66,7 +66,7 @@ class MultiTaskUNET(torch.nn.Module):
         self.dec1 = Decoder_UpSampling(flts[1], flts[0])
         
         
-        # última capa conv que nos da la máscara de segmentaC_inón
+        # última capa conv que nos da la máscara de segmentacinón
         self.out1 = torch.nn.Conv2d(flts[0], num_classes_seg, 1, padding=0)
         
         # MaxPooling
@@ -102,7 +102,7 @@ if __name__ == "__main__":
     inputs = torch.randn((4, 1, 512, 512))  # Batch de imágenes de ejemplo
     model = MultiTaskUNET()  # InstanC_inar el modelo
     y = model(inputs)  # Forward pass
-    print(y.shape)  # Salida de la máscara de segmentaC_inón
+    print(y.shape)  # Salida de la máscara de segmentacinón
     
     summary(model, input_size = (1, 512, 512))
    
