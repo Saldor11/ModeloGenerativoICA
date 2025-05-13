@@ -93,16 +93,16 @@ class MultiTaskUNET(torch.nn.Module):
         x1 = self.dec1(x2,x1E)
         
         
-        # Salidas de la segmentación y esqueleto
+        # Salidas de la segmentación
         xa = self.out1(x1)
         return xa
 
 # Ejemplo de uso
 if __name__ == "__main__":
-    inputs = torch.randn((4, 1, 512, 512))  # Batch de imágenes de ejemplo
-    model = MultiTaskUNET()  # InstanC_inar el modelo
-    y = model(inputs)  # Forward pass
-    print(y.shape)  # Salida de la máscara de segmentacinón
+    inputs = torch.randn((4, 1, 512, 512))
+    model = MultiTaskUNET() 
+    y = model(inputs)  
+    print(y.shape)  
     
     summary(model, input_size = (1, 512, 512))
    
